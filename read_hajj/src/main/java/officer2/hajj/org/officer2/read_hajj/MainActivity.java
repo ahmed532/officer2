@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -28,6 +29,7 @@ import java.io.InputStream;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +121,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             System.out.println(result);
+            textView = (TextView) findViewById(R.id.textview);
+            textView.setText(result);
+
             // might want to change "executed" for the returned string passed
             // into onPostExecute() but that is upto you
         }
