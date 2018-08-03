@@ -30,9 +30,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    // implementation 'com.google.cloud:google-cloud-bigquery:1.32.0'
-    implementation ('com.google.cloud:google-cloud-bigquery:1.32.0') {
-        exclude group: 'com.google.api-client', module: 'google-api-client-appengine'
-    }
+    implementation 'com.google.cloud:google-cloud-bigquery:1.32.0'
+    //implementation 'com.google.appengine:appengine-api-1.0-sdk:1.9.64'
+    // implementation ('com.google.cloud:google-cloud-bigquery:1.32.0') {
+    //    exclude group: 'com.google.api-client', module: 'google-api-client-appengine'
+    // }
 
 }
