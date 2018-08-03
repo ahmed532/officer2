@@ -48,9 +48,16 @@ public class MainActivity extends AppCompatActivity {
                     intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
             if (rawMessages != null) {
                 NdefMessage[] messages = new NdefMessage[rawMessages.length];
+                String nfcres ="";
                 for (int i = 0; i < rawMessages.length; i++) {
                     messages[i] = (NdefMessage) rawMessages[i];
+                    System.out.println(messages[i].toString());
+                    nfcres += messages[i].toString() + "\n";
+
                 }
+                textView = (TextView) findViewById(R.id.nfctextview);
+                textView.setText(nfcres+"kjhk");
+                new BigQueryTask().execute(nfcres);
                 // Process the messages array.
             }
         }
